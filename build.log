@@ -1,0 +1,882 @@
+
+==============================================
+START : FUNC_BUILD_KERNEL
+==============================================
+
+build common config=exynos9810-star2lte_eur_defconfig 
+build model config=star2lte 
+rm files in : /home/geiti94/Android/Kernels/NEMESIS_KERNEL_S9/arch/arm64/boot/dts/*.dtb
+rm: cannot remove '/home/geiti94/Android/Kernels/NEMESIS_KERNEL_S9/arch/arm64/boot/dts/*.dtb': No such file or directory
+rm: cannot remove '/home/geiti94/Android/Kernels/NEMESIS_KERNEL_S9/arch/arm64/boot/boot.img-dtb': No such file or directory
+rm: cannot remove '/home/geiti94/Android/Kernels/NEMESIS_KERNEL_S9/arch/arm64/boot/boot.img-zImage': No such file or directory
+#
+# configuration written to .config
+#
+scripts/kconfig/conf  --silentoldconfig Kconfig
+  CHK     include/config/kernel.release
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  CHK     include/generated/timeconst.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/asm-offsets.h
+  CALL    scripts/checksyscalls.sh
+  CHK     include/generated/compile.h
+  CC      arch/arm64/mm/fault.o
+  CC      arch/arm64/kernel/process.o
+  CC      arch/arm64/mm/ioremap.o
+  CC      kernel/panic.o
+  CC      arch/arm64/kernel/traps.o
+  LD      arch/arm64/mm/built-in.o
+  LD      arch/arm64/kernel/built-in.o
+  GZIP    kernel/config_data.gz
+  CHK     kernel/config_data.h
+  UPD     kernel/config_data.h
+  CC      kernel/configs.o
+  LD      kernel/built-in.o
+  CHK     drivers/gator_5.27/gator_src_md5.h
+  CC      drivers/gator_5.27/gator_main.o
+  LD      drivers/trace/built-in.o
+  LD      drivers/gator_5.27/gator.o
+  LD      drivers/gator_5.27/built-in.o
+  LD      drivers/built-in.o
+  LD      vmlinux.o
+  MODPOST vmlinux.o
+  GEN     .version
+  CHK     include/generated/compile.h
+  UPD     include/generated/compile.h
+  CC      init/version.o
+  LD      init/built-in.o
+  KSYM    .tmp_kallsyms1.o
+  KSYM    .tmp_kallsyms2.o
+  LD      vmlinux
+  SORTEX  vmlinux
+  SYSMAP  System.map
+  FIPS : Generating hmac of crypto and updating vmlinux... 
+HMAC for "crypto" module is: b'b0aeec130f35ec5f17ed33846e836ce68ef95ea4f007e02216ab114464bdbcb8'
+
+FIPS integrity procedure has been finished for crypto
+
+  FIPS : Generating hmac of fmp and updating vmlinux... 
+HMAC for "fmp" module is: b'f3ab4781383707e3fe8dd99640905280c1101dd1c58084180c9d40be422303ca'
+FIPS integrity procedure has been finished for fmp
+  OBJCOPY arch/arm64/boot/Image
+  Building modules, stage 2.
+  MODPOST 0 modules
+  GZIP    arch/arm64/boot/Image.gz
+Processing dts files...
+=> Processing: exynos9810-star2lte_eur_open_16.dts
+=> Generating: exynos9810-star2lte_eur_open_16.dtb
+Warning (unit_address_vs_reg): Node /reserved-memory/modem_if has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/cp_ram_logging has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/sec_debug_magic has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/seclog_mem has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/secure_camera has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/header has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_kernel has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_platform has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_sfr has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_cachedump has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_etm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_pstore has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_kevents has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/fimc_is_lib has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /etf0@1e004000/ports/port@0/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf0@1e004000/ports/port@1/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf1@1e005000/ports/port@0/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf1@1e005000/ports/port@1/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@8 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@9 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@10 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /exynos-pm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ITMON@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /phy_m4s4top_dsi0@0x16160000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /displayport_phy@110A0000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /decon_f@0x16030000/te_eint has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /decon_f@0x16030000/cam-stat has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /usb@10C00000/dwc3 has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-phy has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-phy/ufs-phy-sys has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-io-coherency has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /fixedregulator@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /repeater@15100000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dummy_dcf has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /acpm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /acpm_ipc has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /coresight@1e000000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu0@800000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu1@900000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu2@A00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu3@B00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu0@400000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu1@500000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu2@600000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu3@700000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etf0@C000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etf1@5000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnel0@4000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnel1@9000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnelm2@9000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etr@A000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil_gov/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil_gov/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cpufreq/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cpufreq/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m4s4_csis2@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m0s4s2_csis1@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m0s4s2_csis3@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cmu_ewf has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /mif_pdata has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /shmem@F6E00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/vts@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/vts@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/dp_audio@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/dsif@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs0@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs1@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs2@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_2l3@20 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_3m3@5A has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is-flash-gpio@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_3h1@6A has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /panel_drv@001 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /panel_drv@001/pend,disp-det has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /sec_thermistor@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sec_thermistor@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sec_thermistor@10 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@8 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /exynos_console_debugger has a reg or ranges property, but no unit name
+=> Processing: exynos9810-star2lte_eur_open_17.dts
+=> Generating: exynos9810-star2lte_eur_open_17.dtb
+Warning (unit_address_vs_reg): Node /reserved-memory/modem_if has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/cp_ram_logging has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/sec_debug_magic has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/seclog_mem has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/secure_camera has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/header has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_kernel has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_platform has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_sfr has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_cachedump has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_etm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_pstore has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_kevents has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/fimc_is_lib has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /etf0@1e004000/ports/port@0/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf0@1e004000/ports/port@1/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf1@1e005000/ports/port@0/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf1@1e005000/ports/port@1/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@8 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@9 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@10 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /exynos-pm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ITMON@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /phy_m4s4top_dsi0@0x16160000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /displayport_phy@110A0000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /decon_f@0x16030000/te_eint has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /decon_f@0x16030000/cam-stat has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /usb@10C00000/dwc3 has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-phy has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-phy/ufs-phy-sys has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-io-coherency has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /fixedregulator@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /repeater@15100000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dummy_dcf has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /acpm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /acpm_ipc has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /coresight@1e000000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu0@800000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu1@900000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu2@A00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu3@B00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu0@400000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu1@500000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu2@600000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu3@700000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etf0@C000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etf1@5000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnel0@4000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnel1@9000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnelm2@9000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etr@A000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil_gov/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil_gov/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cpufreq/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cpufreq/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m4s4_csis2@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m0s4s2_csis1@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m0s4s2_csis3@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cmu_ewf has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /mif_pdata has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /shmem@F6E00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/vts@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/vts@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/dp_audio@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/dsif@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs0@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs1@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs2@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_2l3@20 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_3m3@5A has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is-flash-gpio@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_3h1@6A has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /panel_drv@001 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /panel_drv@001/pend,disp-det has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /sec_thermistor@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sec_thermistor@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sec_thermistor@10 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@8 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /exynos_console_debugger has a reg or ranges property, but no unit name
+=> Processing: exynos9810-star2lte_eur_open_18.dts
+=> Generating: exynos9810-star2lte_eur_open_18.dtb
+Warning (unit_address_vs_reg): Node /reserved-memory/modem_if has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/cp_ram_logging has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/sec_debug_magic has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/seclog_mem has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/secure_camera has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/header has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_kernel has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_platform has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_sfr has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_cachedump has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_etm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_pstore has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_kevents has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/fimc_is_lib has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /etf0@1e004000/ports/port@0/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf0@1e004000/ports/port@1/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf1@1e005000/ports/port@0/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf1@1e005000/ports/port@1/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@8 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@9 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@10 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /exynos-pm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ITMON@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /phy_m4s4top_dsi0@0x16160000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /displayport_phy@110A0000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /decon_f@0x16030000/te_eint has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /decon_f@0x16030000/cam-stat has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /usb@10C00000/dwc3 has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-phy has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-phy/ufs-phy-sys has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-io-coherency has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /fixedregulator@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /repeater@15100000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dummy_dcf has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /acpm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /acpm_ipc has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /coresight@1e000000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu0@800000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu1@900000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu2@A00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu3@B00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu0@400000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu1@500000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu2@600000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu3@700000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etf0@C000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etf1@5000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnel0@4000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnel1@9000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnelm2@9000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etr@A000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil_gov/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil_gov/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cpufreq/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cpufreq/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m4s4_csis2@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m0s4s2_csis1@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m0s4s2_csis3@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cmu_ewf has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /mif_pdata has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /shmem@F6E00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/vts@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/vts@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/dp_audio@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/dsif@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs0@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs1@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs2@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_2l3@20 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_3m3@5A has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is-flash-gpio@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_3h1@6A has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /panel_drv@001 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /panel_drv@001/pend,disp-det has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /sec_thermistor@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sec_thermistor@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sec_thermistor@10 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@8 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /exynos_console_debugger has a reg or ranges property, but no unit name
+=> Processing: exynos9810-star2lte_eur_open_20.dts
+=> Generating: exynos9810-star2lte_eur_open_20.dtb
+Warning (unit_address_vs_reg): Node /reserved-memory/modem_if has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/cp_ram_logging has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/sec_debug_magic has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/seclog_mem has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/secure_camera has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/header has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_kernel has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_platform has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_sfr has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_cachedump has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_etm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_pstore has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_kevents has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/fimc_is_lib has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /etf0@1e004000/ports/port@0/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf0@1e004000/ports/port@1/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf1@1e005000/ports/port@0/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf1@1e005000/ports/port@1/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@8 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@9 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@10 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /exynos-pm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ITMON@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /phy_m4s4top_dsi0@0x16160000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /displayport_phy@110A0000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /decon_f@0x16030000/te_eint has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /decon_f@0x16030000/cam-stat has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /usb@10C00000/dwc3 has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-phy has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-phy/ufs-phy-sys has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-io-coherency has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /fixedregulator@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /repeater@15100000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dummy_dcf has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /acpm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /acpm_ipc has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /coresight@1e000000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu0@800000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu1@900000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu2@A00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu3@B00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu0@400000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu1@500000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu2@600000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu3@700000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etf0@C000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etf1@5000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnel0@4000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnel1@9000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnelm2@9000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etr@A000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil_gov/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil_gov/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cpufreq/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cpufreq/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m4s4_csis2@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m0s4s2_csis1@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m0s4s2_csis3@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cmu_ewf has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /mif_pdata has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /shmem@F6E00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/vts@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/vts@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/dp_audio@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/dsif@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs0@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs1@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs2@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_2l3@20 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_3m3@5A has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is-flash-gpio@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_3h1@6A has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /panel_drv@001 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /panel_drv@001/pend,disp-det has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /sec_thermistor@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sec_thermistor@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sec_thermistor@10 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@8 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /exynos_console_debugger has a reg or ranges property, but no unit name
+=> Processing: exynos9810-star2lte_eur_open_23.dts
+=> Generating: exynos9810-star2lte_eur_open_23.dtb
+Warning (unit_address_vs_reg): Node /reserved-memory/modem_if has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/cp_ram_logging has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/sec_debug_magic has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/seclog_mem has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/secure_camera has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/header has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_kernel has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_platform has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_sfr has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_cachedump has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_etm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_pstore has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_kevents has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/fimc_is_lib has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /etf0@1e004000/ports/port@0/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf0@1e004000/ports/port@1/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf1@1e005000/ports/port@0/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf1@1e005000/ports/port@1/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@8 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@9 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@10 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /exynos-pm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ITMON@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /phy_m4s4top_dsi0@0x16160000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /displayport_phy@110A0000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /decon_f@0x16030000/te_eint has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /decon_f@0x16030000/cam-stat has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /usb@10C00000/dwc3 has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-phy has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-phy/ufs-phy-sys has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-io-coherency has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /fixedregulator@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /repeater@15100000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dummy_dcf has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /acpm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /acpm_ipc has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /coresight@1e000000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu0@800000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu1@900000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu2@A00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu3@B00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu0@400000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu1@500000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu2@600000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu3@700000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etf0@C000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etf1@5000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnel0@4000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnel1@9000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnelm2@9000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etr@A000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil_gov/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil_gov/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cpufreq/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cpufreq/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m4s4_csis2@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m0s4s2_csis1@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m0s4s2_csis3@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cmu_ewf has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /mif_pdata has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /shmem@F6E00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/vts@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/vts@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/dp_audio@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/dsif@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs0@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs1@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs2@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_2l3@20 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_3m3@5A has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is-flash-gpio@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_3h1@6A has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /panel_drv@001 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /panel_drv@001/pend,disp-det has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /sec_thermistor@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sec_thermistor@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sec_thermistor@10 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@8 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /exynos_console_debugger has a reg or ranges property, but no unit name
+=> Processing: exynos9810-star2lte_eur_open_26.dts
+=> Generating: exynos9810-star2lte_eur_open_26.dtb
+Warning (unit_address_vs_reg): Node /reserved-memory/modem_if has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/cp_ram_logging has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/sec_debug_magic has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/seclog_mem has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/secure_camera has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/header has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_kernel has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_platform has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_sfr has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_cachedump has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_etm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_pstore has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/exynos_ss/log_kevents has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /reserved-memory/fimc_is_lib has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /etf0@1e004000/ports/port@0/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf0@1e004000/ports/port@1/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf1@1e005000/ports/port@0/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /etf1@1e005000/ports/port@1/endpoint@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@8 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@9 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /input_booster/booster_key@10 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /exynos-pm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ITMON@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /phy_m4s4top_dsi0@0x16160000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /displayport_phy@110A0000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /decon_f@0x16030000/te_eint has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /decon_f@0x16030000/cam-stat has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /usb@10C00000/dwc3 has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-phy has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-phy/ufs-phy-sys has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /ufs@0x11120000/ufs-io-coherency has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /fixedregulator@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /repeater@15100000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dummy_dcf has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /acpm has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /acpm_ipc has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /coresight@1e000000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu0@800000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu1@900000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu2@A00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl0_cpu3@B00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu0@400000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu1@500000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu2@600000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cl1_cpu3@700000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etf0@C000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etf1@5000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnel0@4000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnel1@9000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_funnelm2@9000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /coresight@1e000000/cs_etr@A000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /abox@0x17C50000/ext_bin@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil_gov/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /schedutil_gov/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cpufreq/domain@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cpufreq/domain@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m4s4_csis2@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m0s4s2_csis1@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /dphy_m0s4s2_csis3@0x16210500 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /cmu_ewf has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /mif_pdata has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /shmem@F6E00000 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/rdma@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/wdma@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/vts@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/vts@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/dp_audio@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/uaif@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/dsif@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs0@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs1@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sound/sifs2@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /gpio_keys/button@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_2l3@20 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_3m3@5A has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is-flash-gpio@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /fimc-is_sensor_3h1@6A has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /panel_drv@001 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /panel_drv@001/pend,disp-det has a reg or ranges property, but no unit name
+Warning (unit_address_vs_reg): Node /sec_thermistor@0 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sec_thermistor@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /sec_thermistor@10 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@1 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@2 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@3 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@4 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@5 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@6 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@7 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /argos/boot_device@8 has a unit name, but no reg property
+Warning (unit_address_vs_reg): Node /exynos_console_debugger has a reg or ranges property, but no unit name
+Generating dtb.img...
+=> Found compatible entry: Samsung, Star2 rev16
+    (chip: 9810, hw_rev: 16, hw_rev_end: 16)
+=> Found compatible entry: Samsung, Star2 rev17
+    (chip: 9810, hw_rev: 17, hw_rev_end: 17)
+=> Found compatible entry: Samsung, Star2 rev18
+    (chip: 9810, hw_rev: 18, hw_rev_end: 19)
+=> Found compatible entry: Samsung, Star2 rev20
+    (chip: 9810, hw_rev: 20, hw_rev_end: 22)
+=> Found compatible entry: Samsung, Star2 rev23
+    (chip: 9810, hw_rev: 23, hw_rev_end: 25)
+=> Found compatible entry: Samsung, Star2 rev26
+    (chip: 9810, hw_rev: 26, hw_rev_end: 255)
+Done.
+
+=================================
+END   : FUNC_BUILD_KERNEL
+=================================
+
+[3J[H[2J 
+Android Image Kitchen - RepackImg Script
+by osm0sis @ xda-developers
+ 
+Warning: Overwriting existing files!
+ 
+Packing ramdisk...
+ 
+Using compression: gzip
+ 
+Getting build information...
+kernel = boot.img-zImage
+cmdline = androidboot.selinux=permissive androidboot.selinux=permissive
+board = SRPQH16A001KU
+base = 10000000
+pagesize = 2048
+kernel_offset = 00008000
+ramdisk_offset = 01000000
+second_offset = 00f00000
+tags_offset = 00000100
+os_version = 8.0.0
+os_patch_level = 2018-03
+hash = sha1
+dtb = boot.img-dtb
+ 
+Building image...
+ 
+Using format: AOSP
+ 
+Appending footer...
+ 
+Using type: SEAndroid
+ 
+Done!
+Total compile time was 60 seconds
